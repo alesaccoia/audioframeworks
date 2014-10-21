@@ -1,0 +1,56 @@
+Chapter 1: Real-time multimedia systems
+
+1.1 Real-time computing
+The term real-time is referred to a system that is subject to real-time constraints. As an example the real-time video synthesis and processing software used by VJs to and video artists have the constraint of rendering approximately 25 images per second in order to provide a smooth animation and keep in sync with the refresh rate of the monitor or the projector.
+
+Non real-time systems aren’t subject to these constraint: the development of the first computing systems arrived during World War II, together with the need instrument that could perform millions of repetitive calculations with absolute precision and in the fastest possible way. Very often, the computers would take hours, or days, in order to come up with a result, and this time was dependent just by the accuracy with which they were programmed and by the speed of the hardware. These systems were far from being real-time.
+
+Nowadays, during the era of the internet, the complexity of the computer architecture is hidden to both users and to most of the computer programmers. Developing non-trivial multi-media software, though, because if its real-time constraints, involve the understanding of at least some basic principles of how the computer and its multimedia subsystem works. The rest of this chapter is a review of some basic principles of Computer Architecture and Operating Systems.
+
+1.2 The CPU, and a food metaphor
+A piece of software can be seen as a recipe: there are ingredients, steps to follow, kitchen space, and a finite set of tools in the kitchen. A modern computer, then, can be seen as a restaurant kitchen where multiple people are working at different recipes, and they share the same finite space and a finite set of resources. To speed-up the preparation of the the most elaborated dishes, very often is needed the concurrent work of more than one person.
+
+Continuing the food metaphor, the CPU can be seen as a cook that follows and executes, line by line, the recipes for the dishes that need to be prepared. On a computer, each of these lines can be represented by a binary number, that the CPU is able to interpret. The sequence of these numbers, called executable code is stored, normally on disk, and it’s loaded into the main computer memory, called RAM, whenever the user or the system need to run this code. The number of possible instructions is limited, exactly like in a recipe book. The set of executable instruction is called, of course, Instruction Set and depends on the architecture of the system. Most the available instructions deal with moving data from the CPU registers (the kitchen space) to the RAM (the fridge, or the cellar), and performing simple mathematical operation or comparisons on them… these are the skills of the cook!
+
+Let’s continue with this metaphor. A cook so single tasking that can just follow one recipe from the beginning to the end it’s not that efficient. The first computer systems were done exactly this way: just one program could be loaded in memory each time, and to run a new program one must wait for the completion of the current one. The programmer would sign up for a block of time and run his program, hoping that none of the 20000 tubes in the mainframe would burn during the run.
+
+Normally, a good cook is following multiple recipes at the same time. Sometimes he needs to wait for something to bake in the oven, and during that time he doesn’t want to be idle. Or better, his boss doesn’t want him to be idle. In order to switch between different recipes, the cook marks with a √ the line he’s working on at the moment on each of them. In the CPU there’s a special register, called Program Counter *PC), that takes care of that: it contains the memory address of the instruction that is being carried on at the moment. We can summarize the current completion state of a recipe as:
+- the current line of the recipe being executed 
+- the components of the recipe that have been prepared until this moment and where are them located in the kitchen space
+In order to switch to another recipe, the cook must save the current state of the kitchen for the recipe he’s currently working and restore the conditions of the next recipe from where he left it. In computer science this is called Context Switch. The state of the CPU for a given program is:
+- the Program Counter
+- the content of the CPU registers
+A system capable of switching between various programs at execution time is called multiprogrammed system. This feature, called multiprogramming, is typical of the second generation of Operating Systems (1965-1980). Note that I said Operating Systems instead of Computer Systems, because multiprogramming is a software feature that enables the same hardware architecture that could be single-programmed to be used concurrently. 
+
+To introduce another common term we can say that the action of putting on hold one task in order to focus on another task is called preemption. This concept is very important to understand most of the issues in multi-threading programming.
+
+1.3 Peripherals, interrupts, device drivers
+This is a notoriously boring topic in a Computer Architecture course, normally accompanied by vintage pictures of keyboards, printer and the first mouse prototypes. What is important to understand is that peripherals are not just those devices that are “peripheral” to the computer, like the printer or the keyboard that sit on the table. A peripheral is also a sound card, or a video card, or the USB controller. Some of these peripherals have become such a requirement for the normal use of a computer that they are normally integrated on the main board, especially in laptops.
+
+There are input peripherals, like the mouse and the keyboard, output peripherals like the printer or the video card, and input/output peripherals like the sound card, that allows for both recording and playback of sound.
+No matter what type of peripheral we are speaking about, whenever it needs the attention of the CPU it issues an Interrupt Request. This means that the CPU should save its state as soon as possible and execute and Interrupt Service Routine (ISR) to check what does the peripheral want to communicate, before returning to the original instruction sequence. For input peripheral, normally this means that there is some data available, for example a keystroke on a keyboard: the data associated with the event is stored in memory at some location known to the ISR, ready to be fetched and used. In a kitchen, an input peripheral is for example a oven: when the timer goes off it requires the attention of the cook. But to continue the analogy: the cook monitors constantly everything he doesn’t have total control on, by looking at the boiling point of the water and the color of the food or by tasting it. While
+
+When an Interrupt Request is issued from output peripherals, this normally means that the peripheral is waiting for some data to supplied in order to continue its execution. For a printer, this could mean that the CPU should store in a new buffer the data that needs to be printed: in this case there is no urgent need and the operation should be carried as soon as possible but without disturbing other operations that have a higher priority.
+
+For a sound card, since there’s the real-time constraint of outputting sound constantly and without interruptions or glitches, the ISR has to be as fast as possible, and normally has a very high priority. We’ll give more insights about this  in another section.
+
+1.4 Multi-processor and multi-core systems 
+
+Aka “If something can go wrong, it will.” 
+
+In the last years, CPU vendors have run out of room with most of their traditional approaches to boosting CPU performance. Instead of driving clock speeds higher, they have been all turning to hyperthreading and multi-core architectures, where the CPU contains multiple execution cores capable of running multiple tasks concurrently.
+Each core has its own registers, its Program Counter and the other amenities that make a CPU worth its name, including the Arithmetic Logic Unit (ALU) that is used to execute the arithmetic instructions.
+
+Expanding the kitchen metaphor to accommodate multi-core architecture, we can see a situation that gets a bit chaotic. In the kitchen now there are N cooks (equivalent of the number of cores) with the same skills. Each cook can, when the director of the kitchen (the operating system) gives the order, switch to any of the recipes that are currently being prepared (tasks being executed). There is a problem ari
+
+1.5 Memory and shared resources
+
+affinity
+
+
+Continue the metaphor: a cook 
+
+
+
+http://stst.elia.pub.ro/news/SO/Modern%20Operating%20System%20-%20Tanenbaum.pdf
+http://www.gotw.ca/publications/concurrency-ddj.htm

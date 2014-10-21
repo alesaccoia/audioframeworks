@@ -1,0 +1,80 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;}
+\margl1440\margr1440\vieww16760\viewh13920\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 Lesson 2: Audio Programming\
+\
+
+\b0 Audio and multimedia development require to learn some fundamental properties of sound. While the generation and the propagation of natural sounds are the subject of 
+\i Acoustics
+\i0 , the study and implementation of Digital Audio Systems are a part of the engineering branch called 
+\i Digital Signal Processing
+\i0  (DSP). 
+\b \
+\
+2.1 Digital Audio\
+\
+2.1.1 Numerical representation of sound\
+
+\b0 Most of the natural phenomena that are interesting to the various fields of engineering are time-varying functions of time, where the 
+\i time variable
+\i0  is continuous. This means that, given the equations that describe the evolution of time-varying phenomena, and the value of the variables peculiar to the system, it\'92s possible to know precisely the value of the unknowns at 
+\b any time
+\b0 .\
+In order to process information with the computer it\'92s necessary to record the value of the continuous function at successive points in time, normally spaced at uniform levels. This succession of data points is called 
+\i time series
+\i0 .\
+\
+Digital sounds are a time series, and an easy one to deal with because it\'92s 
+\i one dimensional
+\i0 , representing the value of the air pressure at a particular time. \cf2 Sound pressure is transmitted in air as a wave like motion. In air, sound waves have a pressure which alternately deviates from a state of equilibrium. These deviations are regions of compression and rarefaction of molecules.\
+\
+One important property of sound is its 
+\i frequency content
+\i0 .\cf0 \
+\
+
+\b 2.1.2 ADCs and DACs
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+DATRAC image (ref ANA)\
+\
+The need to turn analog data in digital form emerged in the beginning of the XXth century with the widespread use of telephone, because of the need of 
+\i multiplexing
+\i0  various calls on the same transmission line.\
+\
+\pard\pardeftab720\sa240
+\cf0 "... a frequency or rapidity approximating the frequency or average frequency of the finer or more complex vibrations which are characteristic of the voice or of articulate speech, ..., as high as 4320 closures per second, at which rate I find that the voice with all its original timbre and individuality may be successfully reproduced in the receiving instrument. ... I have also succeeded in getting what might be considered as commercial results by using rates of closure that, comparatively speaking, are as low as 3500 closures per second, this being practically the rate of the highest note which characterizes vowel sounds." (William M. Miner, Patent, 1903)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Digital Audio\
+	\'95	Representation of sound\
+	\'95	ADCs, DACs\
+	\'95	Propeties of digital signals (quantization, sampling rate, Pope 346)\
+	\'95	Impact of transducers (see Pope)\
+	\'95	Representations and Formats for Media Data\
+\
+Audio programming\
+	\'95	Types of APIs: conceptual layer including web audio, pure data, audio unit, \
+	\'95	Levels of abstraction. show the relevant code in PD, web audio, supercollider\
+	\'95	Panorama of top level APIs\
+	\'95	Unit generators\
+\
+Pure Data\
+	\'95	Example of sine\
+	\'95	MIDI example\
+	\'95	LibPD\
+\
+Lesso\
+\
+\
+References\
+ANAL: http://www.analog.com/library/analogdialogue/archives/39-06/chapter%201%20data%20converter%20history%20f.pdf\
+CATT: Principles of Pulse Code Modulation
+\f1 \
+}

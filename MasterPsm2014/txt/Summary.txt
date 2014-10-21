@@ -1,0 +1,63 @@
+Frameworks for Digital Audio : Theory and Applications
+
+SUMMARY
+
+Lesson 1
+
+Computer Architecture 
+	•	CPU, Execution flow: review of execution pointer, instruction
+	•	Peripherals
+	•	Device drivers, Interrupts
+	•	Memory
+	•	Multiprogrammed systems, preemption
+	•	Multiprocessor Systems
+	•	Multithreading
+
+Computer programming
+	•	Programming languages
+	•	Compiled vs Interpreted
+	•	Compilers
+	•	Linkers
+	•	Application Programmer Interfaces
+	•	Unix conventions and file system
+	•	Apple frameworks
+
+Lesson 2, Audio Programming
+Digital Audio
+	•	Representation of sound
+	•	ADCs, DACs
+	•	Propeties of digital signals (quantization, sampling rate, Pope 346)
+	•	Impact of transducers (see Pope)
+	•	Representations and Formats for Media Data
+
+Audio programming
+	•	Types of APIs: conceptual layer including web audio, pure data, audio unit, 
+	•	Levels of abstraction. show the relevant code in PD, web audio, supercollider
+	•	Panorama of top level APIs
+	•	Unit generators
+
+Pure Data
+	•	Example of sine
+	•	MIDI example
+	•	LibPD
+
+Examples in C++
+
+Lesson 3: iPhone and MacOS
+	•	Audio unit
+	•	Playing sounds in iOS
+
+Lesson 4: WebAudio
+	•	Introduction
+	•	How it relates to unit generators
+	•	Example scheduling
+	•	Exercises
+
+Create one blank example for having push buttons in iOS, and pd-lib plugged-in
+Create one blank example with buttons in HTML
+
+- Applications
+- File Formats
+- Devices
+- 
+

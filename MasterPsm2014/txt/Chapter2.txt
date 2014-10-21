@@ -1,0 +1,47 @@
+Lesson 2: Audio Programming
+
+Audio and multimedia development require to learn some fundamental properties of sound. While the generation and the propagation of natural sounds are the subject of Acoustics, the study and implementation of Digital Audio Systems are a part of the engineering branch called Digital Signal Processing (DSP). 
+
+2.1 Digital Audio
+
+2.1.1 Numerical representation of sound
+Most of the natural phenomena that are interesting to the various fields of engineering are time-varying functions of time, where the time variable is continuous. This means that, given the equations that describe the evolution of time-varying phenomena, and the value of the variables peculiar to the system, it’s possible to know precisely the value of the unknowns at any time.
+In order to process information with the computer it’s necessary to record the value of the continuous function at successive points in time, normally spaced at uniform levels. This succession of data points is called time series.
+
+Digital sounds are a time series, and an easy one to deal with because it’s one dimensional, representing the value of the air pressure at a particular time. Sound pressure is transmitted in air as a wave like motion. In air, sound waves have a pressure which alternately deviates from a state of equilibrium. These deviations are regions of compression and rarefaction of molecules.
+
+One important property of sound is its frequency content.
+
+2.1.2 ADCs and DACs
+
+DATRAC image (ref ANA)
+
+The need to turn analog data in digital form emerged in the beginning of the XXth century with the widespread use of telephone, because of the need of multiplexing various calls on the same transmission line.
+
+"... a frequency or rapidity approximating the frequency or average frequency of the finer or more complex vibrations which are characteristic of the voice or of articulate speech, ..., as high as 4320 closures per second, at which rate I find that the voice with all its original timbre and individuality may be successfully reproduced in the receiving instrument. ... I have also succeeded in getting what might be considered as commercial results by using rates of closure that, comparatively speaking, are as low as 3500 closures per second, this being practically the rate of the highest note which characterizes vowel sounds." (William M. Miner, Patent, 1903)
+
+
+Digital Audio
+	•	Representation of sound
+	•	ADCs, DACs
+	•	Propeties of digital signals (quantization, sampling rate, Pope 346)
+	•	Impact of transducers (see Pope)
+	•	Representations and Formats for Media Data
+
+Audio programming
+	•	Types of APIs: conceptual layer including web audio, pure data, audio unit, 
+	•	Levels of abstraction. show the relevant code in PD, web audio, supercollider
+	•	Panorama of top level APIs
+	•	Unit generators
+
+Pure Data
+	•	Example of sine
+	•	MIDI example
+	•	LibPD
+
+Lesso
+
+
+References
+ANAL: http://www.analog.com/library/analogdialogue/archives/39-06/chapter%201%20data%20converter%20history%20f.pdf
+CATT: Principles of Pulse Code Modulation
