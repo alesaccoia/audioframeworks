@@ -1,0 +1,4 @@
+audioframeworks
+===============
+
+Syllabus and examples
